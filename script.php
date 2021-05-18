@@ -10,7 +10,7 @@ header('Content-Type: application/json');
 $host = "localhost";
 $user = "root";
 $pass = "123456";
-$db = "formulario";
+$db = "teste";
 
 //criando a conexão
 
@@ -28,7 +28,7 @@ $dadosjson = json_decode($dados,TRUE);
 
 // Corre todo Array da variável e atribui a variável $row 
 
-foreach ($dadosjson["leads"] as $row) {
+foreach ($dadosjson["contatos"] as $row) {
 
 
         // aqui atribui os campos do Json com uma variável do PHP assim fica mais facil na query
@@ -40,7 +40,7 @@ foreach ($dadosjson["leads"] as $row) {
 
         //query INSERT com as variáveis criadas 
 
-        $sql = "INSERT INTO conversao (json_lead, id_conversao, nome, email)VALUES ('$leads',null,'$nome', '$email')";
+        $sql = "INSERT INTO conversao (json_lead, id_conversao, nome, email)VALUES ('$leads','$nome', '$email')";
   
         //rodando a query junto com a conexão do banco e posteriormente finalizando a conexão
 
